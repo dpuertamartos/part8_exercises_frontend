@@ -22,3 +22,20 @@ query {
   }
 }
 `
+
+export const CREATE_BOOK = gql`
+mutation addBook($title: String!, $published: Int!, $author: String!, $genres: [String!]!) {
+    addBook(
+      title: $title,
+      published: $published,
+      author: $author,
+      genres: $genres
+    ) {
+      title
+      author
+      published
+      id
+      genres
+    }
+  }
+`
